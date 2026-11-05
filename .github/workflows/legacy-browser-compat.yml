@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/compat/**'
+      - '.github/scripts/**'
       - '.github/workflows/legacy-browser-compat.yml'
       - 'webpack.common.js'
       - 'webpack.prod.js'
