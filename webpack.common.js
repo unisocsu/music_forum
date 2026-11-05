@@ -23,7 +23,7 @@ module.exports = {
 		admin: './build/public/src/admin/admin.js',
 	},
 	output: {
-		// Keep webpack's generated runtime compatible with Firefox 68 / Android Firefox.
+		// LEGACY_BROWSER_RUNTIME: keep webpack's runtime compatible with Firefox 68.
 		environment: {
 			arrowFunction: false,
 			const: false,

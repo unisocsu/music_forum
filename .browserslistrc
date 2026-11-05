@@ -1,3 +1,2 @@
-# CSS prefixing and browser-target configuration.
-# Firefox 68 is the practical baseline for Firefox on Android 4.4 KitKat.
+# CSS compatibility target: Firefox on Android 4.4 KitKat.
 Firefox 68

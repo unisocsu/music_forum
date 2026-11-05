@@ -16,7 +16,7 @@ module.exports = merge(common, /** @type { import('webpack').Configuration } */ 
 		minimizer: [
 			new MinimizerPlugin({
 				minify: MinimizerPlugin.esbuildMinify,
-				// esbuild also lowers modern syntax in the final bundle for Firefox 68.
+				// LEGACY_BROWSER_TARGET: lower bundled JavaScript syntax for Firefox 68.
 				minimizerOptions: {
 					target: 'firefox68',
 				},

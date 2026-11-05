@@ -1,7 +1,7 @@
 {
-    "title": "פורום המוזיקה",
+    "title": "NodeBB",
     "showSiteTitle": 1,
-    "defaultLang": "he",
+    "defaultLang": "en-GB",
     "loginDays": 14,
     "loginSeconds": 0,
     "sessionDuration": 0,
@@ -29,18 +29,9 @@
     "newbieReputationThreshold": 3,
     "postQueue": 1,
     "postQueueReputationThreshold": 1,
-    "groupsExemptFromPostQueue": [
-        "administrators",
-        "Global Moderators"
-    ],
-    "groupsExemptFromNewUserRestrictions": [
-        "administrators",
-        "Global Moderators"
-    ],
-    "groupsExemptFromMaintenanceMode": [
-        "administrators",
-        "Global Moderators"
-    ],
+    "groupsExemptFromPostQueue": ["administrators", "Global Moderators"],
+    "groupsExemptFromNewUserRestrictions": ["administrators", "Global Moderators"],
+    "groupsExemptFromMaintenanceMode": ["administrators", "Global Moderators"],
     "minimumPostLength": 8,
     "maximumPostLength": 32767,
     "systemTags": "",
@@ -96,7 +87,7 @@
     "allowPrivateGroups": 1,
     "unreadCutoff": 2,
     "bookmarkThreshold": 5,
-    "autoDetectLang": 0,
+    "autoDetectLang": 1,
     "logIPs": 1,
     "reputation:disabled": 0,
     "downvote:disabled": 0,
