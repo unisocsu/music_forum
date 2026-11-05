@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - .github/workflows/import-nodebb.yml
+      - .github/scripts/**
   workflow_dispatch:
 
 permissions:
@@ -31,6 +32,9 @@ jobs:
           set -euo pipefail
           git clone --depth 1 --branch master https://github.com/NodeBB/NodeBB.git /tmp/nodebb
           rsync -a --delete --exclude='.git/' --exclude='.github/' /tmp/nodebb/ ./
+
+      - name: Apply legacy browser compatibility
+        run: bash .github/scripts/apply-legacy-browser-support.sh
 
       - name: Commit and push imported source
         shell: bash
