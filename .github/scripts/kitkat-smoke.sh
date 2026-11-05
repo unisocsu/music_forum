@@ -12,8 +12,8 @@ attempt=0
 while [ "$attempt" -lt 30 ]; do
   attempt=$((attempt + 1))
   sleep 2
-  adb shell uiautomator dump /sdcard/window.xml >/dev/null 2>&1 || true
-  adb pull /sdcard/window.xml /tmp/window.xml >/dev/null 2>&1 || true
+  adb shell uiautomator dump /data/local/tmp/window.xml >/dev/null 2>&1 || true
+  adb pull /data/local/tmp/window.xml /tmp/window.xml >/dev/null 2>&1 || true
   if grep -q 'KitKat JavaScript smoke test: PASS' /tmp/window.xml 2>/dev/null; then
     echo 'KitKat browser smoke test passed.'
     exit 0
