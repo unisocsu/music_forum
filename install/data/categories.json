@@ -1,38 +1,56 @@
 [
     {
-        "name": "Announcements",
-        "description": "Announcements regarding our community",
-        "descriptionParsed": "<p>Announcements regarding our community</p>\n",
-        "bgColor": "#fda34b",
+        "name": "הודעות ועדכונים",
+        "description": "עדכונים, חדשות והודעות חשובות על קהילת המוזיקה",
+        "descriptionParsed": "<p>עדכונים, חדשות והודעות חשובות על קהילת המוזיקה</p>\n",
+        "bgColor": "#6c5ce7",
         "color": "#ffffff",
-        "icon" : "fa-bullhorn",
+        "icon": "fa-bullhorn",
         "order": 1
     },
     {
-        "name": "General Discussion",
-        "description": "A place to talk about whatever you want",
-        "descriptionParsed": "<p>A place to talk about whatever you want</p>\n",
-        "bgColor": "#59b3d0",
+        "name": "דיונים על מוזיקה",
+        "description": "דיונים על אמנים, אלבומים, סגנונות, שירים והופעות",
+        "descriptionParsed": "<p>דיונים על אמנים, אלבומים, סגנונות, שירים והופעות</p>\n",
+        "bgColor": "#0984e3",
         "color": "#ffffff",
-        "icon" : "fa-comments-o",
+        "icon": "fa-comments",
         "order": 2
     },
     {
-        "name": "Blogs",
-        "description": "Blog posts from individual members",
-        "descriptionParsed": "<p>Blog posts from individual members</p>\n",
-        "bgColor": "#86ba4b",
+        "name": "מוזיקה חדשה והמלצות",
+        "description": "שתפו שירים, אלבומים ואמנים חדשים שגיליתם",
+        "descriptionParsed": "<p>שתפו שירים, אלבומים ואמנים חדשים שגיליתם</p>\n",
+        "bgColor": "#00b894",
         "color": "#ffffff",
-        "icon" : "fa-newspaper-o",
+        "icon": "fa-headphones",
+        "order": 3
+    },
+    {
+        "name": "יצירה והפקה מוזיקלית",
+        "description": "כלים, תוכנות, הקלטה, מיקס, הפקה ותיאוריה מוזיקלית",
+        "descriptionParsed": "<p>כלים, תוכנות, הקלטה, מיקס, הפקה ותיאוריה מוזיקלית</p>\n",
+        "bgColor": "#e17055",
+        "color": "#ffffff",
+        "icon": "fa-sliders",
         "order": 4
     },
     {
-        "name": "Comments & Feedback",
-        "description": "Got a question? Ask away!",
-        "descriptionParsed": "<p>Got a question? Ask away!</p>\n",
-        "bgColor": "#e95c5a",
+        "name": "שיתוף יצירות",
+        "description": "פרסמו יצירות מקוריות, סקיצות והקלטות לקבלת משוב",
+        "descriptionParsed": "<p>פרסמו יצירות מקוריות, סקיצות והקלטות לקבלת משוב</p>\n",
+        "bgColor": "#d63031",
         "color": "#ffffff",
-        "icon" : "fa-question",
-        "order": 3
+        "icon": "fa-music",
+        "order": 5
+    },
+    {
+        "name": "ציוד וכלי נגינה",
+        "description": "גיטרות, קלידים, תופים, ציוד אולפן וכלי נגינה",
+        "descriptionParsed": "<p>גיטרות, קלידים, תופים, ציוד אולפן וכלי נגינה</p>\n",
+        "bgColor": "#636e72",
+        "color": "#ffffff",
+        "icon": "fa-guitar",
+        "order": 6
     }
 ]
