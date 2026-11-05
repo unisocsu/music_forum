@@ -1,10 +1,14 @@
-### Welcome to your brand new NodeBB forum!
+### ברוכים הבאים לפורום המוזיקה!
 
-This is what a topic and post looks like. As an administrator, you can edit the post\'s title and content.
-To customise your forum, go to the [Administrator Control Panel](../../admin). You can modify all aspects of your forum there, including installation of third-party plugins.
+זה המקום לגלות מוזיקה חדשה, לדבר על אמנים ואלבומים, לשתף יצירות מקוריות ולהחליף ידע על נגינה והפקה מוזיקלית.
 
-#### Additional Resources
+**איך מתחילים?**
 
-* [NodeBB Documentation](https://docs.nodebb.org)
-* [Community Support Forum](https://community.nodebb.org)
-* [Project repository](https://github.com/nodebb/nodebb)
+- הציגו את עצמכם וספרו איזו מוזיקה אתם אוהבים.
+- שתפו שיר או אלבום שאתם ממליצים עליו.
+- פתחו דיון על אמן, סגנון או הופעה.
+- אם אתם יוצרים מוזיקה, פרסמו קטע מקורי וקבלו משוב מהקהילה.
+
+אנא שמרו על שיח מכבד, תנו קרדיט ליוצרים ושתפו רק חומרים שיש לכם זכות לפרסם.
+
+נתראה בדיונים!
