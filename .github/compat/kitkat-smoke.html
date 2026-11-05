@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KitKat compatibility smoke test</title>
+<style>
+body { margin: 16px; font: 16px Arial, sans-serif; color: #222; background: #fff; }
+h1 { font-size: 22px; }
+.pass { color: #176b2c; }
+.fail { color: #a00000; }
+#result { padding: 12px; border: 1px solid #888; }
+</style>
+</head>
+<body>
+<h1>KitKat browser smoke test</h1>
+<div id="result">RUNNING</div>
+<ul id="checks"></ul>
+<script>
+(function () {
+  var checks = [];
+  function check(name, ok) {
+    checks.push({ name: name, ok: !!ok });
+  }
+  check('ES5 JavaScript executes', true);
+  check('DOM querySelector', !!document.querySelector);
+  check('XMLHttpRequest', !!window.XMLHttpRequest);
+  check('JSON', !!window.JSON && !!JSON.parse && !!JSON.stringify);
+  check('localStorage', (function () {
+    try { return !!window.localStorage; } catch (e) { return false; }
+  }()));
+  check('WebSocket', !!window.WebSocket);
+  check('CSS media queries', !!(window.matchMedia));
+  var list = document.getElementById('checks');
+  var failures = 0;
+  for (var i = 0; i < checks.length; i += 1) {
+    var item = document.createElement('li');
+    item.className = checks[i].ok ? 'pass' : 'fail';
+    item.appendChild(document.createTextNode((checks[i].ok ? 'PASS: ' : 'FAIL: ') + checks[i].name));
+    list.appendChild(item);
+    if (!checks[i].ok) { failures += 1; }
+  }
+  var result = document.getElementById('result');
+  result.className = failures ? 'fail' : 'pass';
+  result.innerHTML = failures ? 'SMOKE TEST: FAIL (' + failures + ')' : 'KitKat JavaScript smoke test: PASS';
+}());
+</script>
+</body>
+</html>
