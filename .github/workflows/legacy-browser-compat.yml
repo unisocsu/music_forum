@@ -32,7 +32,7 @@ jobs:
           emulator-options: -no-window -no-audio -no-boot-anim -camera-back none
           disable-animations: true
           script: |
-            set -euo pipefail
+            set -eu
             python3 -m http.server 8765 --directory .github/compat >/tmp/compat-http.log 2>&1 &
             SERVER_PID=$!
             trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
