@@ -1,0 +1,52 @@
+name: Legacy browser compatibility
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/compat/**'
+      - '.github/workflows/legacy-browser-compat.yml'
+      - 'webpack.common.js'
+      - 'webpack.prod.js'
+      - '.browserslistrc'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  android-kitkat-emulator:
+    name: Android 4.4 KitKat browser smoke test (API 19)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Start Android 4.4 emulator and test browser
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 19
+          target: default
+          arch: x86
+          profile: Nexus 5
+          emulator-options: -no-window -no-audio -no-boot-anim -camera-back none
+          disable-animations: true
+          script: |
+            set -euo pipefail
+            python3 -m http.server 8765 --directory .github/compat >/tmp/compat-http.log 2>&1 &
+            SERVER_PID=$!
+            trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+            adb wait-for-device
+            adb shell am start -a android.intent.action.VIEW -d http://10.0.2.2:8765/kitkat-smoke.html
+            for attempt in $(seq 1 30); do
+              sleep 2
+              adb shell uiautomator dump /sdcard/window.xml >/dev/null 2>&1 || true
+              adb pull /sdcard/window.xml /tmp/window.xml >/dev/null 2>&1 || true
+              if grep -q 'KitKat JavaScript smoke test: PASS' /tmp/window.xml 2>/dev/null; then
+                echo 'KitKat browser smoke test passed.'
+                exit 0
+              fi
+            done
+            echo 'KitKat browser did not display a passing smoke-test result.'
+            adb logcat -d -t 1000 || true
+            exit 1
