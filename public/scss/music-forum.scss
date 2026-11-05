@@ -1,0 +1,39 @@
+/* Music Forum visual layer.
+ * Keep declarations conservative so older browser engines can parse this file.
+ */
+html[lang="he"],
+html[lang="he"] body,
+html[data-dir="rtl"] body {
+  font-family: Arial, "Noto Sans Hebrew", sans-serif;
+}
+
+html[data-dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[data-dir="rtl"] .category-item,
+html[data-dir="rtl"] [component="category"] {
+  text-align: right;
+}
+
+html[data-dir="rtl"] .category-item .category-name,
+html[data-dir="rtl"] [component="category"] .category-name {
+  font-weight: 700;
+}
+
+html[data-dir="rtl"] a {
+  text-decoration-thickness: auto;
+}
+
+@media screen and (max-width: 767px) {
+  html[data-dir="rtl"] .container,
+  html[data-dir="rtl"] .container-fluid {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  html[data-dir="rtl"] .btn {
+    white-space: normal;
+  }
+}
