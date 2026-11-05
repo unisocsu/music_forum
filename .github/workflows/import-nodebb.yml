@@ -1,0 +1,47 @@
+name: Import NodeBB upstream
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/import-nodebb.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-nodebb-main
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Import official NodeBB source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --branch master https://github.com/NodeBB/NodeBB.git /tmp/nodebb
+          rsync -a --delete --exclude='.git/' --exclude='.github/' /tmp/nodebb/ ./
+
+      - name: Commit and push imported source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No upstream changes to import."
+            exit 0
+          fi
+          git commit -m "Import official NodeBB source"
+          git push origin HEAD:main
