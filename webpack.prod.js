@@ -16,7 +16,10 @@ module.exports = merge(common, /** @type { import('webpack').Configuration } */ 
 		minimizer: [
 			new MinimizerPlugin({
 				minify: MinimizerPlugin.esbuildMinify,
-				minimizerOptions: {},
+				// esbuild also lowers modern syntax in the final bundle for Firefox 68.
+				minimizerOptions: {
+					target: 'firefox68',
+				},
 			}),
 		],
 	},
