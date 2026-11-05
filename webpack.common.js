@@ -23,6 +23,17 @@ module.exports = {
 		admin: './build/public/src/admin/admin.js',
 	},
 	output: {
+		// Keep webpack's generated runtime compatible with Firefox 68 / Android Firefox.
+		environment: {
+			arrowFunction: false,
+			const: false,
+			destructuring: false,
+			dynamicImport: false,
+			forOf: false,
+			module: false,
+			optionalChaining: false,
+			templateLiteral: false,
+		},
 		filename: '[name].min.js',
 		chunkFilename: '[name].[contenthash].min.js',
 		path: path.resolve(__dirname, 'build/public'),
